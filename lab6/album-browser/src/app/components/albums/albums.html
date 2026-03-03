@@ -1,0 +1,20 @@
+<div style="max-width: 800px; margin: 2rem auto; padding: 0 20px;">
+  <h2 style="font-weight: 300; font-size: 2rem; margin-bottom: 1.5rem;">Albums Collection</h2>
+  
+  <div *ngIf="albums.length === 0" class="loader">Loading...</div>
+
+  <div *ngFor="let a of albums" 
+       style="background: white; border-radius: 12px; padding: 15px; margin-bottom: 12px; 
+              display: flex; justify-content: space-between; align-items: center;
+              box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: transform 0.2s;"
+       onmouseover="this.style.transform='translateY(-2px)'"
+       onmouseout="this.style.transform='translateY(0)'">
+    
+    <a [routerLink]="['/albums', a.id]" style="text-decoration: none; color: #1a1a1a; flex-grow: 1;">
+      <span style="color: #007bff; font-weight: bold; margin-right: 10px;">#{{ a.id }}</span>
+      {{ a.title }}
+    </a>
+
+    <button (click)="delete(a.id, $event)" style="color: red;">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.categories button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.categories button.active {
+  background-color: #0077ff;
+  color: white;
+}
+.product-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+}
