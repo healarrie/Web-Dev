@@ -1,0 +1,26 @@
+<div style="max-width: 1000px; margin: 2rem auto; padding: 0 20px;">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h2 style="font-weight: 300;">Photos of Album #{{ albumId }}</h2>
+    <button [routerLink]="['/albums', albumId]">← Back to Album</button>
+  </div>
+  
+  <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px;">
+    <div *ngFor="let p of photos" 
+         style="background: white; border-radius: 12px; overflow: hidden; 
+                box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s;"
+         onmouseover="this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'"
+         onmouseout="this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)'">
+      
+      <img [src]="'https://dummyimage.com/200x200/eee/999.png&text=Photo+' + p.id" 
+           style="width: 100%; display: block; border-bottom: 1px solid #f0f0f0;">
+      
+      <div style="padding: 12px;">
+        <p style="font-size: 0.8rem; margin: 0; color: #666; line-height: 1.4; height: 2.4rem; overflow: hidden;">
+          {{ p.title }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+
+**/node_modules/
+**/.angular/
+
+**/venv/
+**/env/
+**/db.sqlite3
+
+**/.vscode/
+**/__pycache__/
+**/*.pyc
+.DS_Store
