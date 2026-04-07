@@ -33,9 +33,9 @@
 #     except Category.DoesNotExist:
 #         return JsonResponse({'error': 'Category not found'}, status=404)
 
-from rest_framework import viewsets # type: ignore
-from rest_framework.decorators import action # type: ignore
-from rest_framework.response import Response # type: ignore
+from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 from api.models import Category, Product
 from api.serializers import CategorySerializer, ProductSerializer
 
